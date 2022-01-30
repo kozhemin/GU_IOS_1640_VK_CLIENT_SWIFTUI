@@ -9,11 +9,16 @@ import SwiftUI
 
 struct UserCellView: View {
     var body: some View {
-        UserCell()
+        UserCell(friend: friendDemoData.items.first!)
     }
 }
 
 struct UserCell: View {
+    var friend: Friend
+    
+    init(friend: Friend){
+        self.friend = friend
+    }
     
     var body: some View {
         HStack(spacing: 15){
@@ -33,18 +38,18 @@ private extension UserCell {
     var userAvatar: some View {
         Image("user-avatar")
             .resizable()
-            .frame(width: 100, height: 100)
+            .frame(width: 80, height: 80)
             .modifier(CircleShadow(shadowColor: .orange, shadowRadius: 3))
     }
     
     var userFio: some View {
-        Text("Иванов Иван")
-            .font(.title)
+        Text(friend.fullName)
+            .font(.system(size: 16))
             .lineLimit(1)
     }
     
     var userLogin: some View {
-        Text("ivanov@")
+        Text(friend.nickName ?? "")
             .font(.body)
             .foregroundColor(.gray)
             .lineLimit(1)

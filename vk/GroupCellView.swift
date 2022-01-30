@@ -9,6 +9,18 @@ import SwiftUI
 
 struct GroupCellView: View {
     var body: some View {
+        GroupCell(group: groupDemoData.items.first!)
+    }
+}
+
+struct GroupCell: View {
+    var group: Group
+    
+    init(group: Group){
+        self.group = group
+    }
+    
+    var body: some View {
         HStack(alignment: .lastTextBaseline){
             groupAvatar
             VStack(alignment: .leading){
@@ -21,7 +33,7 @@ struct GroupCellView: View {
     }
 }
 
-private extension GroupCellView {
+private extension GroupCell {
     
     var groupAvatar: some View {
         Image("group-avatar")
@@ -31,14 +43,14 @@ private extension GroupCellView {
     }
     
     var groupName: some View {
-        Text("Life news")
+        Text(group.name)
             .font(.system(size: 18))
             .bold()
             .lineLimit(1)
     }
     
     var groupDescription: some View {
-        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ")
+        Text(group.description)
             .font(.subheadline)
             .multilineTextAlignment(.leading)
             .lineLimit(3)

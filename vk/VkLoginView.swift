@@ -7,23 +7,35 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct VkLoginView: View {
+    @Binding var isLogin: Bool
+    @State private var loginText = ""
+    @State private var passwordText = ""
+    @State private var showingAlert = false
+    
+    private func checkLogin() -> Bool {
+        if loginText == "Admin" && passwordText == "admin" {
+            return true
+        }
+        return false
+    }
+    
     var body: some View {
-        VStack{
+        
+        ScrollView{
             VkIcon()
                 .padding(.top, 150)
             
             VStack {
-                VkInputLoginField()
-                VkInputPasswordField()
+                loginField
+                passwordField
                     .padding(.top)
             }
             .padding(.top, 50)
             .padding([.leading, .horizontal])
             
-            VkButtonLogin()
+            buttonLogin
                 .padding(.top, 30)
-            
             Spacer()
         }
         .background(Color("vkBgColor"))
@@ -44,44 +56,45 @@ struct VkIcon: View {
     }
 }
 
-struct VkInputLoginField: View {
-    @State var loginText = ""
-    
-    var body: some View {
+extension VkLoginView {
+    var loginField: some View {
         TextField("Email или телефон", text: $loginText)
             .textFieldStyle(.roundedBorder)
+            .ignoresSafeArea(.keyboard)
     }
 }
 
-struct VkInputPasswordField: View {
-    @State var passwordText = ""
-    
-    var body: some View {
-        TextField("Пароль", text: $passwordText)
+extension VkLoginView {
+    var passwordField: some View {
+        SecureField("Пароль", text: $passwordText)
             .textFieldStyle(.roundedBorder)
+            .ignoresSafeArea(.keyboard)
     }
 }
 
-struct VkButtonLogin: View {
-    var body: some View {
+extension VkLoginView {
+    var buttonLogin: some View {
         Button {
-            print("Button tapped!")
+            if checkLogin() {
+                isLogin = true
+            } else {
+              showingAlert = true
+            }
         } label: {
             Text("Войти")
                 .font(.headline)
                 .bold()
         }
-        .frame(width: 250, alignment: .center)
-        .padding(.all, 8)
-        .background(Color.white)
-        .foregroundColor(.blue)
-        .clipShape(Capsule())
-        
+        .buttonStyle(VkButtonStyle())
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Error message"), message: Text("Login or password incorrect"),
+                  dismissButton: .default(Text("Ok!")))
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        VkLoginView(isLogin: .constant(true))
     }
 }
