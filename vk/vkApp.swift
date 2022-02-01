@@ -17,16 +17,10 @@ struct vkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                VStack {
-                    
-                    VkLoginView(isLogin: $isLogin)
-                    
-                    NavigationLink(
-                        destination: VkMainView(),
-                        isActive: $isLogin,
-                        label: { EmptyView() })
-                }
+            if isLogin{
+                VkMainView()
+            } else {
+                VkLoginView(isLogin: $isLogin)
             }
         }
     }
