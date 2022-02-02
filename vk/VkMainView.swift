@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct VkMainView: View {
+    private let friendViewModel = FriendModelView()
+    private let groupViewModel = GroupModelView()
+    
     var body: some View {
         
         TabView {
             NavigationView {
-                VkFriendListView(friendList: friendDemoData)
+                VkFriendListView(viewModel: friendViewModel)
             }
             .tabItem {
                 Image(systemName: "person.2.fill")
@@ -20,7 +23,7 @@ struct VkMainView: View {
             }
             
             NavigationView {
-                VkGroupListView(groupList: groupDemoData)
+                VkGroupListView(viewModel: groupViewModel)
             }
             .tabItem {
                 Image(systemName: "rectangle.stack.person.crop")

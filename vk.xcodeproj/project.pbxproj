@@ -10,6 +10,11 @@
 		9768A05D27AA7910000CAE6B /* VkLoginFromWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A05C27AA7910000CAE6B /* VkLoginFromWebView.swift */; };
 		9768A06027AA7B26000CAE6B /* VkWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A05F27AA7B26000CAE6B /* VkWebView.swift */; };
 		9768A06227AA8C6A000CAE6B /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06127AA8C6A000CAE6B /* AuthData.swift */; };
+		9768A06627AAA8A8000CAE6B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06427AAA8A8000CAE6B /* NetworkService.swift */; };
+		9768A06727AAA8A8000CAE6B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06527AAA8A8000CAE6B /* NetworkServiceProtocol.swift */; };
+		9768A06927AAA8C2000CAE6B /* VKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06827AAA8C1000CAE6B /* VKResponse.swift */; };
+		9768A06B27AAAA6E000CAE6B /* FriendModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06A27AAAA6D000CAE6B /* FriendModelView.swift */; };
+		9768A06D27AAC239000CAE6B /* GroupModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06C27AAC239000CAE6B /* GroupModelView.swift */; };
 		9770806727A70DF80074452A /* VkNewsFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770806627A70DF80074452A /* VkNewsFeedView.swift */; };
 		979AC67427A1E1AE00DEB592 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67327A1E1AE00DEB592 /* UserCellView.swift */; };
 		979AC67727A1E34300DEB592 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67627A1E34300DEB592 /* CircleImage.swift */; };
@@ -33,6 +38,11 @@
 		9768A05C27AA7910000CAE6B /* VkLoginFromWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkLoginFromWebView.swift; sourceTree = "<group>"; };
 		9768A05F27AA7B26000CAE6B /* VkWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkWebView.swift; sourceTree = "<group>"; };
 		9768A06127AA8C6A000CAE6B /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		9768A06427AAA8A8000CAE6B /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		9768A06527AAA8A8000CAE6B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		9768A06827AAA8C1000CAE6B /* VKResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKResponse.swift; sourceTree = "<group>"; };
+		9768A06A27AAAA6D000CAE6B /* FriendModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModelView.swift; sourceTree = "<group>"; };
+		9768A06C27AAC239000CAE6B /* GroupModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModelView.swift; sourceTree = "<group>"; };
 		9770806627A70DF80074452A /* VkNewsFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkNewsFeedView.swift; sourceTree = "<group>"; };
 		979AC67327A1E1AE00DEB592 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		979AC67627A1E34300DEB592 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -72,6 +82,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		9768A06327AAA88F000CAE6B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9768A06427AAA8A8000CAE6B /* NetworkService.swift */,
+				9768A06527AAA8A8000CAE6B /* NetworkServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9770806827A712450074452A /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +110,14 @@
 		97E51B6B27A3EB5700EAF644 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9768A06827AAA8C1000CAE6B /* VKResponse.swift */,
 				97E51B7227A3EC2C00EAF644 /* PhotoGallery.swift */,
 				97E51B7027A3EBF800EAF644 /* News.swift */,
 				97E51B6E27A3EBC600EAF644 /* Group.swift */,
 				97E51B6C27A3EB6900EAF644 /* Friend.swift */,
 				9768A06127AA8C6A000CAE6B /* AuthData.swift */,
+				9768A06A27AAAA6D000CAE6B /* FriendModelView.swift */,
+				9768A06C27AAC239000CAE6B /* GroupModelView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +141,7 @@
 		97F6E4D3279A123D004B6473 /* vk */ = {
 			isa = PBXGroup;
 			children = (
+				9768A06327AAA88F000CAE6B /* Services */,
 				9768A05E27AA7AE2000CAE6B /* Components */,
 				9770806827A712450074452A /* HelperViews */,
 				97E51B6B27A3EB5700EAF644 /* Models */,
@@ -217,21 +240,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9768A06D27AAC239000CAE6B /* GroupModelView.swift in Sources */,
 				97E51B7527A3F85600EAF644 /* VkGroupListView.swift in Sources */,
 				97E51B6627A3E16800EAF644 /* VkButton.swift in Sources */,
 				97E51B6A27A3EAEA00EAF644 /* VkFriendListView.swift in Sources */,
 				97E51B6827A3E55800EAF644 /* VkMainView.swift in Sources */,
+				9768A06727AAA8A8000CAE6B /* NetworkServiceProtocol.swift in Sources */,
 				97E51B7327A3EC2C00EAF644 /* PhotoGallery.swift in Sources */,
 				97E51B6F27A3EBC600EAF644 /* Group.swift in Sources */,
 				9770806727A70DF80074452A /* VkNewsFeedView.swift in Sources */,
+				9768A06927AAA8C2000CAE6B /* VKResponse.swift in Sources */,
 				97E51B7727A4329D00EAF644 /* VkFriendDetailView.swift in Sources */,
 				97F6E4D7279A123D004B6473 /* VkLoginView.swift in Sources */,
 				979AC67727A1E34300DEB592 /* CircleImage.swift in Sources */,
 				9768A05D27AA7910000CAE6B /* VkLoginFromWebView.swift in Sources */,
 				9768A06027AA7B26000CAE6B /* VkWebView.swift in Sources */,
+				9768A06B27AAAA6E000CAE6B /* FriendModelView.swift in Sources */,
 				97E51B7127A3EBF800EAF644 /* News.swift in Sources */,
 				9768A06227AA8C6A000CAE6B /* AuthData.swift in Sources */,
 				979AC67427A1E1AE00DEB592 /* UserCellView.swift in Sources */,
+				9768A06627AAA8A8000CAE6B /* NetworkService.swift in Sources */,
 				97E51B6D27A3EB6900EAF644 /* Friend.swift in Sources */,
 				97F6E4D5279A123D004B6473 /* vkApp.swift in Sources */,
 				979AC67927A1EF1A00DEB592 /* GroupCellView.swift in Sources */,

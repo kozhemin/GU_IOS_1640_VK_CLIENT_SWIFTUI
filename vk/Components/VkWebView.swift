@@ -35,7 +35,7 @@ struct VkWebView: UIViewRepresentable {
         return urlComp
     }()
     
-    init(completion: @escaping () -> Void){
+    init(completion: @escaping () -> Void) {
         self.successCompletion = completion
     }
     

@@ -30,8 +30,7 @@ struct UserCell: View {
 private extension UserCell {
     
     var userAvatar: some View {
-        Image("user-avatar")
-            .resizable()
+        AsyncImage(url: friend.photoUrl)
             .frame(width: 80, height: 80)
             .modifier(CircleShadow(shadowColor: .orange, shadowRadius: 3))
     }

@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct VkGroupListView: View {
-    var groupList = GroupItems(items:[])
+    @ObservedObject var viewModel: GroupModelView
     
     var body: some View {
-        List(groupList.items){ group in
+        List(viewModel.groups){ group in
             GroupCell(group: group)
         }
         .listStyle(PlainListStyle())
+        .onAppear() {
+            viewModel.fetch()
+        }
         .navigationTitle("Группы")
     }
 }
 
 struct VkGroupListView_Previews: PreviewProvider {
     static var previews: some View {
+        let viewModel = GroupModelView()
         NavigationView {
-            VkGroupListView(groupList: groupDemoData)
+            VkGroupListView(viewModel: viewModel)
         }
     }
 }

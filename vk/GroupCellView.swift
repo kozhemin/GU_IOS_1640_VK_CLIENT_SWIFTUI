@@ -30,8 +30,7 @@ struct GroupCell: View {
 private extension GroupCell {
     
     var groupAvatar: some View {
-        Image("group-avatar")
-            .resizable()
+        AsyncImage(url: group.photoUrl)
             .frame(width: 80, height: 80)
             .modifier(CircleShadow(shadowColor: .blue, shadowRadius: 5))
     }
