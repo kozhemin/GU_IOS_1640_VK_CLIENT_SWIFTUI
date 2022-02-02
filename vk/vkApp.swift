@@ -20,7 +20,8 @@ struct vkApp: App {
             if isLogin {
                 VkMainView()
             } else {
-                VkLoginView(isLogin: $isLogin)
+                VkLoginFromWebView(isLogin: $isLogin)
+               // VkLoginView(isLogin: $isLogin)
             }
         }
     }
