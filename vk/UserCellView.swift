@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct UserCellView: View {
-    var body: some View {
-        UserCell(friend: friendDemoData.items.first!)
-    }
-}
-
 struct UserCell: View {
     var friend: Friend
     
@@ -58,6 +52,7 @@ private extension UserCell {
 
 struct UserCellView_Previews: PreviewProvider {
     static var previews: some View {
-        UserCellView()
+        UserCell(friend: friendDemoData.items.first!)
+            .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

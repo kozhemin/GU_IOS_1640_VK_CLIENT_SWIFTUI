@@ -17,7 +17,7 @@ struct vkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if isLogin{
+            if isLogin {
                 VkMainView()
             } else {
                 VkLoginView(isLogin: $isLogin)

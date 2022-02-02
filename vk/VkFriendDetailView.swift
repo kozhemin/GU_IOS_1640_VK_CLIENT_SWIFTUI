@@ -11,14 +11,12 @@ struct VkFriendDetailView: View {
     var friend: Friend
     
     var body: some View {
-        VStack(alignment: .center){
-            
+        VStack(alignment: .center) {
             userAvatar
             userNickName
             
             VkUserGallery()
             Spacer()
-        
         }
         .padding()
         .navigationTitle(friend.fullName)

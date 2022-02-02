@@ -7,23 +7,17 @@
 
 import SwiftUI
 
-struct GroupCellView: View {
-    var body: some View {
-        GroupCell(group: groupDemoData.items.first!)
-    }
-}
-
 struct GroupCell: View {
     var group: Group
     
-    init(group: Group){
+    init(group: Group) {
         self.group = group
     }
     
     var body: some View {
-        HStack(alignment: .lastTextBaseline){
+        HStack(alignment: .lastTextBaseline) {
             groupAvatar
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 groupName
                 groupDescription
             }
@@ -59,6 +53,7 @@ private extension GroupCell {
 
 struct GroupCellView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupCellView()
+        GroupCell(group: groupDemoData.items.first!)
+            .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

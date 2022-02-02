@@ -22,7 +22,7 @@ struct VkLoginView: View {
     
     var body: some View {
         
-        ScrollView{
+        ScrollView {
             VkIcon()
                 .padding(.top, 150)
             
