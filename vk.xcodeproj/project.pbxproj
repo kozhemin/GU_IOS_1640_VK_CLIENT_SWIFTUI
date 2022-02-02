@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		979AC67427A1E1AE00DEB592 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67327A1E1AE00DEB592 /* UserCellView.swift */; };
+		979AC67727A1E34300DEB592 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67627A1E34300DEB592 /* CircleImage.swift */; };
+		979AC67927A1EF1A00DEB592 /* GroupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67827A1EF1A00DEB592 /* GroupCellView.swift */; };
 		97F6E4D5279A123D004B6473 /* vkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6E4D4279A123D004B6473 /* vkApp.swift */; };
 		97F6E4D7279A123D004B6473 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6E4D6279A123D004B6473 /* ContentView.swift */; };
 		97F6E4D9279A123F004B6473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97F6E4D8279A123F004B6473 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		979AC67327A1E1AE00DEB592 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
+		979AC67627A1E34300DEB592 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		979AC67827A1EF1A00DEB592 /* GroupCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCellView.swift; sourceTree = "<group>"; };
 		97F6E4D1279A123D004B6473 /* vk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F6E4D4279A123D004B6473 /* vkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vkApp.swift; sourceTree = "<group>"; };
 		97F6E4D6279A123D004B6473 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		979AC67527A1E32500DEB592 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				979AC67627A1E34300DEB592 /* CircleImage.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
 		97F6E4C8279A123D004B6473 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +65,13 @@
 		97F6E4D3279A123D004B6473 /* vk */ = {
 			isa = PBXGroup;
 			children = (
+				979AC67527A1E32500DEB592 /* ViewModifier */,
 				97F6E4D4279A123D004B6473 /* vkApp.swift */,
 				97F6E4D6279A123D004B6473 /* ContentView.swift */,
+				979AC67327A1E1AE00DEB592 /* UserCellView.swift */,
 				97F6E4D8279A123F004B6473 /* Assets.xcassets */,
 				97F6E4DA279A123F004B6473 /* Preview Content */,
+				979AC67827A1EF1A00DEB592 /* GroupCellView.swift */,
 			);
 			path = vk;
 			sourceTree = "<group>";
@@ -138,7 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97F6E4D7279A123D004B6473 /* ContentView.swift in Sources */,
+				979AC67727A1E34300DEB592 /* CircleImage.swift in Sources */,
+				979AC67427A1E1AE00DEB592 /* UserCellView.swift in Sources */,
 				97F6E4D5279A123D004B6473 /* vkApp.swift in Sources */,
+				979AC67927A1EF1A00DEB592 /* GroupCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
