@@ -12,20 +12,19 @@ struct VkLoginView: View {
     @State private var loginText = ""
     @State private var passwordText = ""
     @State private var showingAlert = false
-    
+
     private func checkLogin() -> Bool {
         if loginText == "Admin" && passwordText == "admin" {
             return true
         }
         return false
     }
-    
+
     var body: some View {
-        
         ScrollView {
             VkIcon()
                 .padding(.top, 150)
-            
+
             VStack {
                 loginField
                 passwordField
@@ -33,7 +32,7 @@ struct VkLoginView: View {
             }
             .padding(.top, 50)
             .padding([.leading, .horizontal])
-            
+
             buttonLogin
                 .padding(.top, 30)
             Spacer()
@@ -78,7 +77,7 @@ extension VkLoginView {
             if checkLogin() {
                 isLogin = true
             } else {
-              showingAlert = true
+                showingAlert = true
             }
         } label: {
             Text("Войти")

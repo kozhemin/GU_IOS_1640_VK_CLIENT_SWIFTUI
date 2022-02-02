@@ -9,11 +9,11 @@ import SwiftUI
 
 struct VkFriendListView: View {
     @ObservedObject var viewModel: FriendModelView
-    
-    init (viewModel: FriendModelView) {
+
+    init(viewModel: FriendModelView) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List(viewModel.friends) { friend in
             NavigationLink(destination: VkFriendDetailView(friend: friend)) {
@@ -21,7 +21,7 @@ struct VkFriendListView: View {
             }
         }
         .listStyle(PlainListStyle())
-        .onAppear() {
+        .onAppear {
             viewModel.fetch()
         }
         .navigationTitle("Друзья")

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct VkButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label

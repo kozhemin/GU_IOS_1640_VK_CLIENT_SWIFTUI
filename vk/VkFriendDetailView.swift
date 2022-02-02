@@ -9,12 +9,12 @@ import SwiftUI
 
 struct VkFriendDetailView: View {
     var friend: Friend
-    
+
     var body: some View {
         VStack(alignment: .center) {
             userAvatar
             userNickName
-            
+
             VkUserGallery()
             Spacer()
         }
@@ -41,16 +41,15 @@ extension VkFriendDetailView {
 }
 
 private struct VkUserGallery: View {
-    
-    private let items = 1...5
+    private let items = 1 ... 5
     private let columns = [
-        GridItem(.adaptive(minimum: 100), spacing: 15)
+        GridItem(.adaptive(minimum: 100), spacing: 15),
     ]
-    
+
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 15) {
-                ForEach (items, id: \.self) { i in
+                ForEach(items, id: \.self) { i in
                     Image("post\(i)")
                         .resizable()
                         .scaledToFit()
@@ -62,7 +61,7 @@ private struct VkUserGallery: View {
 
 struct VkFriendDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
+        NavigationView {
             VkFriendDetailView(friend: friendDemoData.items.first!)
         }
     }

@@ -5,20 +5,19 @@
 //  Created by Егор Кожемин on 02.02.2022.
 //
 
+import Combine
 import Foundation
 import SwiftUI
-import Combine
-import WebKit
 import UIKit
+import WebKit
 
 struct VkWebView: UIViewRepresentable {
-    
     var successCompletion: () -> Void
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     private var urlComponents: URLComponents = {
         var urlComp = URLComponents()
         urlComp.scheme = "https"
@@ -34,45 +33,44 @@ struct VkWebView: UIViewRepresentable {
         ]
         return urlComp
     }()
-    
+
     init(completion: @escaping () -> Void) {
-        self.successCompletion = completion
+        successCompletion = completion
     }
-    
+
     func makeUIView(context: Context) -> WKWebView {
         let preferences = WKPreferences()
-        
+
         let configuration = WKWebViewConfiguration()
-        configuration.userContentController.add(self.makeCoordinator(), name: "iOSNative")
+        configuration.userContentController.add(makeCoordinator(), name: "iOSNative")
         configuration.preferences = preferences
-        
+
         let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
-        
+
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.navigationDelegate = context.coordinator
-        
+
         return webView
     }
-    
-    func updateUIView(_ webView: WKWebView, context: Context) {
+
+    func updateUIView(_ webView: WKWebView, context _: Context) {
         let request = URLRequest(url: urlComponents.url!)
         webView.load(request)
     }
-    
-    
-    class Coordinator : NSObject, WKNavigationDelegate {
+
+    class Coordinator: NSObject, WKNavigationDelegate {
         var parent: VkWebView
-        var webViewNavigationSubscriber: AnyCancellable? = nil
-        
+        var webViewNavigationSubscriber: AnyCancellable?
+
         init(_ uiWebView: VkWebView) {
-            self.parent = uiWebView
+            parent = uiWebView
         }
-        
+
         deinit {
             webViewNavigationSubscriber?.cancel()
         }
-        
+
         func webView(
             _: WKWebView,
             decidePolicyFor navigationResponse: WKNavigationResponse,
@@ -83,7 +81,7 @@ struct VkWebView: UIViewRepresentable {
                 url.path == "/blank.html",
                 let fragment = url.fragment
             else { return decisionHandler(.allow) }
-            
+
             let parameters = fragment
                 .components(separatedBy: "&")
                 .map { $0.components(separatedBy: "=") }
@@ -98,22 +96,22 @@ struct VkWebView: UIViewRepresentable {
                 let token = parameters["access_token"],
                 let userIDString = parameters["user_id"],
                 let userID = Int(userIDString)
-                    
+
             else { return decisionHandler(.allow) }
-            
+
             if token.count > 0 && userID > 0 {
                 AuthData.share.userId = userID
                 AuthData.share.token = token
-                self.parent.successCompletion()
+                parent.successCompletion()
             }
-            
+
             decisionHandler(.cancel)
         }
     }
 }
 
 extension VkWebView.Coordinator: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         // Make sure that your passed delegate is called
         if message.name == "iOSNative" {
             if let body = message.body as? [String: Any?] {

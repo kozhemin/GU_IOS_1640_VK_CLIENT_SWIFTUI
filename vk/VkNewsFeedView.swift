@@ -10,7 +10,7 @@ import SwiftUI
 struct VkNewsFeedView: View {
     var body: some View {
         List {
-            ForEach (1 ..< 5) { i in
+            ForEach(1 ..< 5) { i in
                 PostView(postImageName: "post\(i)")
             }
         }
@@ -32,9 +32,9 @@ private struct PostView: View {
                 postText
             }
             .padding()
-            
+
             postImage
-            
+
             VStack {
                 postActivity
             }
@@ -45,21 +45,20 @@ private struct PostView: View {
 }
 
 extension PostView {
-    
     var postAvatar: some View {
         Image("user-avatar")
             .resizable()
             .frame(width: 48, height: 48)
             .modifier(CircleShadow(shadowColor: .gray, shadowRadius: 3))
     }
-    
+
     var postCaption: some View {
         VStack(alignment: .leading) {
             Text("Milan Goti")
                 .font(.callout)
                 .fontWeight(.bold)
                 .foregroundColor(Color.black)
-            
+
             Text("iOS Developr | SwiftUI | Swift | Flutter")
                 .font(.caption)
                 .foregroundColor(.black)
@@ -73,23 +72,23 @@ extension PostView {
             }
         }
     }
-    
+
     var postText: some View {
         Text("Happy Sunday 👋 guys! Today I've redesigned Linkedin for you in SwiftUI. You will find the Source code of this project on my GitHub, go to the below link and download it.")
             .font(.subheadline)
             .foregroundColor(Color.black)
             .padding(.top)
     }
-    
+
     var postImage: some View {
         Image(postImageName)
             .resizable()
             .scaledToFit()
     }
-    
+
     var postActivity: some View {
         HStack(alignment: .center) {
-            HStack(alignment: .center, spacing: 5){
+            HStack(alignment: .center, spacing: 5) {
                 Image("like-button")
                     .resizable()
                     .frame(width: 15, height: 15)
@@ -101,7 +100,7 @@ extension PostView {
                     .fontWeight(.semibold)
             }
             Spacer()
-            
+
             Text("81 Comment")
                 .font(.subheadline)
                 .fontWeight(.semibold)
