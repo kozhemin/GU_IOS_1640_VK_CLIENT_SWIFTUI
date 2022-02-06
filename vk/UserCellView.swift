@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-struct UserCellView: View {
-    var body: some View {
-        UserCell()
-    }
-}
-
 struct UserCell: View {
-    
+    var friend: Friend
+
+    init(friend: Friend) {
+        self.friend = friend
+    }
+
     var body: some View {
-        HStack(spacing: 15){
+        HStack(spacing: 15) {
             userAvatar
-            VStack (alignment:.leading){
+            VStack(alignment: .leading) {
                 userFio
                 userLogin
             }
@@ -29,22 +28,20 @@ struct UserCell: View {
 }
 
 private extension UserCell {
-    
     var userAvatar: some View {
-        Image("user-avatar")
-            .resizable()
-            .frame(width: 100, height: 100)
+        AsyncImage(url: friend.photoUrl)
+            .frame(width: 80, height: 80)
             .modifier(CircleShadow(shadowColor: .orange, shadowRadius: 3))
     }
-    
+
     var userFio: some View {
-        Text("Иванов Иван")
-            .font(.title)
+        Text(friend.fullName)
+            .font(.system(size: 16))
             .lineLimit(1)
     }
-    
+
     var userLogin: some View {
-        Text("ivanov@")
+        Text(friend.nickName ?? "")
             .font(.body)
             .foregroundColor(.gray)
             .lineLimit(1)
@@ -53,6 +50,7 @@ private extension UserCell {
 
 struct UserCellView_Previews: PreviewProvider {
     static var previews: some View {
-        UserCellView()
+        UserCell(friend: friendDemoData.items.first!)
+            .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
