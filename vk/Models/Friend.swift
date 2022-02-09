@@ -45,10 +45,10 @@ extension Friend {
 
 #if DEBUG
     let friendDemoData = FriendItems(items: [
-        Friend(id: 1, firstName: "Иван", lastName: "Иванов", nickName: "ivanov@", photo: ""),
-        Friend(id: 2, firstName: "Степан", lastName: "Петров", nickName: "stepan@", photo: ""),
-        Friend(id: 3, firstName: "Константин", lastName: "Константинов", nickName: "kostya@", photo: ""),
-        Friend(id: 4, firstName: "Афродита", lastName: "Степановна", nickName: "afro@", photo: ""),
-        Friend(id: 5, firstName: "Айседора", lastName: "Андреевна", nickName: "aisedora@", photo: ""),
+        Friend(id: 1, firstName: "Иван", lastName: "Иванов", nickName: "ivanov@", photo: "https://miro.medium.com/max/300/1*PiHoomzwh9Plr9_GA26JcA.png"),
+        Friend(id: 2, firstName: "Степан", lastName: "Петров", nickName: "stepan@", photo: "https://miro.medium.com/max/300/1*PiHoomzwh9Plr9_GA26JcA.png"),
+        Friend(id: 3, firstName: "Константин", lastName: "Константинов", nickName: "kostya@", photo: "https://miro.medium.com/max/300/1*PiHoomzwh9Plr9_GA26JcA.png"),
+        Friend(id: 4, firstName: "Афродита", lastName: "Степановна", nickName: "afro@", photo: "https://miro.medium.com/max/300/1*PiHoomzwh9Plr9_GA26JcA.png"),
+        Friend(id: 5, firstName: "Айседора", lastName: "Андреевна", nickName: "aisedora@", photo: "https://miro.medium.com/max/300/1*PiHoomzwh9Plr9_GA26JcA.png"),
     ])
 #endif

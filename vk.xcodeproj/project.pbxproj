@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97474F6F27B3F88500D22AC7 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97474F6E27B3F88500D22AC7 /* SpringAnimation.swift */; };
 		9768A05D27AA7910000CAE6B /* VkLoginFromWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A05C27AA7910000CAE6B /* VkLoginFromWebView.swift */; };
 		9768A06027AA7B26000CAE6B /* VkWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A05F27AA7B26000CAE6B /* VkWebView.swift */; };
 		9768A06227AA8C6A000CAE6B /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9768A06127AA8C6A000CAE6B /* AuthData.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97474F6E27B3F88500D22AC7 /* SpringAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		9768A05C27AA7910000CAE6B /* VkLoginFromWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkLoginFromWebView.swift; sourceTree = "<group>"; };
 		9768A05F27AA7B26000CAE6B /* VkWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkWebView.swift; sourceTree = "<group>"; };
 		9768A06127AA8C6A000CAE6B /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				979AC67627A1E34300DEB592 /* CircleImage.swift */,
 				97E51B6527A3E16800EAF644 /* VkButton.swift */,
+				97474F6E27B3F88500D22AC7 /* SpringAnimation.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				9768A06D27AAC239000CAE6B /* GroupModelView.swift in Sources */,
 				97E51B7527A3F85600EAF644 /* VkGroupListView.swift in Sources */,
 				97E51B6627A3E16800EAF644 /* VkButton.swift in Sources */,
+				97474F6F27B3F88500D22AC7 /* SpringAnimation.swift in Sources */,
 				97E51B6A27A3EAEA00EAF644 /* VkFriendListView.swift in Sources */,
 				97E51B6827A3E55800EAF644 /* VkMainView.swift in Sources */,
 				9768A06727AAA8A8000CAE6B /* NetworkServiceProtocol.swift in Sources */,
