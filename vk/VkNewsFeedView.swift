@@ -89,16 +89,15 @@ extension PostView {
     var postActivity: some View {
         HStack(alignment: .center) {
             HStack(alignment: .center, spacing: 5) {
-                
                 Image("like-button")
                     .resizable()
                     .frame(width: 15, height: 15)
-                
+
                 Image("heart")
                     .resizable()
                     .frame(width: 15, height: 15)
                     .modifier(SpringAnimation())
-                
+
                 Text("101")
                     .font(.subheadline)
                     .fontWeight(.semibold)

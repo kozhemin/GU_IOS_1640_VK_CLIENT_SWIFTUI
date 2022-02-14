@@ -20,6 +20,8 @@
 		979AC67427A1E1AE00DEB592 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67327A1E1AE00DEB592 /* UserCellView.swift */; };
 		979AC67727A1E34300DEB592 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67627A1E34300DEB592 /* CircleImage.swift */; };
 		979AC67927A1EF1A00DEB592 /* GroupCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AC67827A1EF1A00DEB592 /* GroupCellView.swift */; };
+		97D2D64127B6F7460088A1A2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D2D64027B6F7460088A1A2 /* TabBarController.swift */; };
+		97D2D64327B98D8B0088A1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D2D64227B98D8B0088A1A2 /* AppDelegate.swift */; };
 		97E51B6627A3E16800EAF644 /* VkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E51B6527A3E16800EAF644 /* VkButton.swift */; };
 		97E51B6827A3E55800EAF644 /* VkMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E51B6727A3E55800EAF644 /* VkMainView.swift */; };
 		97E51B6A27A3EAEA00EAF644 /* VkFriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E51B6927A3EAEA00EAF644 /* VkFriendListView.swift */; };
@@ -49,6 +51,8 @@
 		979AC67327A1E1AE00DEB592 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		979AC67627A1E34300DEB592 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		979AC67827A1EF1A00DEB592 /* GroupCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCellView.swift; sourceTree = "<group>"; };
+		97D2D64027B6F7460088A1A2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		97D2D64227B98D8B0088A1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E51B6527A3E16800EAF644 /* VkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkButton.swift; sourceTree = "<group>"; };
 		97E51B6727A3E55800EAF644 /* VkMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkMainView.swift; sourceTree = "<group>"; };
 		97E51B6927A3EAEA00EAF644 /* VkFriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkFriendListView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				9768A05F27AA7B26000CAE6B /* VkWebView.swift */,
+				97D2D64027B6F7460088A1A2 /* TabBarController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				97E51B7427A3F85600EAF644 /* VkGroupListView.swift */,
 				97E51B7627A4329D00EAF644 /* VkFriendDetailView.swift */,
 				9770806627A70DF80074452A /* VkNewsFeedView.swift */,
+				97D2D64227B98D8B0088A1A2 /* AppDelegate.swift */,
 			);
 			path = vk;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				97E51B6827A3E55800EAF644 /* VkMainView.swift in Sources */,
 				9768A06727AAA8A8000CAE6B /* NetworkServiceProtocol.swift in Sources */,
 				97E51B7327A3EC2C00EAF644 /* PhotoGallery.swift in Sources */,
+				97D2D64327B98D8B0088A1A2 /* AppDelegate.swift in Sources */,
 				97E51B6F27A3EBC600EAF644 /* Group.swift in Sources */,
 				9770806727A70DF80074452A /* VkNewsFeedView.swift in Sources */,
 				9768A06927AAA8C2000CAE6B /* VKResponse.swift in Sources */,
@@ -261,6 +268,7 @@
 				9768A06027AA7B26000CAE6B /* VkWebView.swift in Sources */,
 				9768A06B27AAAA6E000CAE6B /* FriendModelView.swift in Sources */,
 				97E51B7127A3EBF800EAF644 /* News.swift in Sources */,
+				97D2D64127B6F7460088A1A2 /* TabBarController.swift in Sources */,
 				9768A06227AA8C6A000CAE6B /* AuthData.swift in Sources */,
 				979AC67427A1E1AE00DEB592 /* UserCellView.swift in Sources */,
 				9768A06627AAA8A8000CAE6B /* NetworkService.swift in Sources */,

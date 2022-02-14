@@ -29,7 +29,7 @@ struct UserCell: View {
 
 private extension UserCell {
     var userAvatar: some View {
-        AsyncImage(url: friend.photoUrl){ image in
+        AsyncImage(url: friend.photoUrl) { image in
             image.resizable()
         } placeholder: {
             ProgressView()
