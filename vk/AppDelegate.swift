@@ -10,7 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         let appearance = UINavigationBarAppearance()
         let navColor = Color("vkBgColor")
 

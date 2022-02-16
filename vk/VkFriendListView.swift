@@ -16,7 +16,8 @@ struct VkFriendListView: View {
 
     var body: some View {
         List(viewModel.friends) { friend in
-            NavigationLink(destination: VkFriendDetailView(friend: friend)) {
+            NavigationLink(
+                destination: VkFriendDetailView(friend: friend).environmentObject(viewModel)) {
                 UserCell(friend: friend)
             }
         }
