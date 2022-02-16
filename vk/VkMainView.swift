@@ -12,32 +12,26 @@ struct VkMainView: View {
     private let groupViewModel = GroupModelView()
 
     var body: some View {
-        TabView {
-            NavigationView {
-                VkFriendListView(viewModel: friendViewModel)
-            }
-            .tabItem {
-                Image(systemName: "person.2.fill")
-                Text("Друзья")
-            }
+        UITabBarWrapper([
+            TabBarElement(tabBarElementItem: .init(title: "Друзья", systemImageName: "person.2.fill")) {
+                NavigationView {
+                    VkFriendListView(viewModel: friendViewModel)
+                }
+            },
+            TabBarElement(tabBarElementItem: .init(title: "Группы", systemImageName: "rectangle.stack.person.crop")) {
+                NavigationView {
+                    VkGroupListView(viewModel: groupViewModel)
+                }
+            },
+            TabBarElement(tabBarElementItem: .init(title: "Лента", systemImageName: "rectangle.3.offgrid.bubble.left")) {
+                NavigationView {
+                    VkNewsFeedView()
+                }
+            },
 
-            NavigationView {
-                VkGroupListView(viewModel: groupViewModel)
-            }
-            .tabItem {
-                Image(systemName: "rectangle.stack.person.crop")
-                Text("Группы")
-            }
-
-            NavigationView {
-                VkNewsFeedView()
-            }
-            .tabItem {
-                Image(systemName: "rectangle.3.offgrid.bubble.left")
-                Text("Лента")
-            }
-        }
-        .navigationBarBackButtonHidden(true)
+        ])
+            .navigationBarBackButtonHidden(true)
+            .ignoresSafeArea()
     }
 }
 

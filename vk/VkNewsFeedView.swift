@@ -92,9 +92,12 @@ extension PostView {
                 Image("like-button")
                     .resizable()
                     .frame(width: 15, height: 15)
+
                 Image("heart")
                     .resizable()
                     .frame(width: 15, height: 15)
+                    .modifier(SpringAnimation())
+
                 Text("101")
                     .font(.subheadline)
                     .fontWeight(.semibold)

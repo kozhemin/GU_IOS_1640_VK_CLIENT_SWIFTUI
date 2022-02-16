@@ -9,26 +9,32 @@ import SwiftUI
 
 struct VkFriendDetailView: View {
     var friend: Friend
+    @State private var scale: CGFloat = 1.0
 
     var body: some View {
-        VStack(alignment: .center) {
-            userAvatar
-            userNickName
+        ScrollView {
+            VStack(alignment: .center) {
+                userAvatar
+                userNickName
 
-            VkUserGallery()
-            Spacer()
+                VkUserGallery(friend: friend)
+                Spacer()
+            }
+            .padding()
+            .navigationTitle(friend.fullName)
         }
-        .padding()
-        .navigationTitle(friend.fullName)
     }
 }
 
 extension VkFriendDetailView {
     var userAvatar: some View {
-        Image("user-avatar")
-            .resizable()
-            .frame(width: 200, height: 200)
-            .modifier(CircleShadow(shadowColor: .orange, shadowRadius: 3))
+        AsyncImage(url: friend.photoUrl) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: 200 * scale, height: 200 * scale)
+        .modifier(CircleShadow(shadowColor: .orange, shadowRadius: 3))
     }
 }
 
@@ -41,20 +47,31 @@ extension VkFriendDetailView {
 }
 
 private struct VkUserGallery: View {
-    private let items = 1 ... 5
+    var friend: Friend
+    @EnvironmentObject var viewModel: FriendModelView
+
     private let columns = [
         GridItem(.adaptive(minimum: 100), spacing: 15),
     ]
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 15) {
-                ForEach(items, id: \.self) { i in
-                    Image("post\(i)")
-                        .resizable()
-                        .scaledToFit()
+        LazyVGrid(columns: columns, spacing: 15) {
+            ForEach(viewModel.gallery, id: \.self) { g in
+                if let img = g.items.getImageByType(type: "x"),
+                   let imgUrl = img.photoUrl
+                {
+                    AsyncImage(url: imgUrl) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                    }
                 }
             }
+        }
+        .onAppear {
+            viewModel.fetchGallery(ownerId: Int(friend.id))
         }
     }
 }

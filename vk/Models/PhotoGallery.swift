@@ -12,7 +12,7 @@ struct PhotoGalleryItems: Codable {
     var items: [PhotoGallery]
 }
 
-struct PhotoGallery: Codable {
+struct PhotoGallery: Codable, Hashable {
     var id: Double
     var albumId: Double
     var ownerId: Double
@@ -37,7 +37,7 @@ extension PhotoGallery {
     }
 }
 
-struct ImageItem: Codable {
+struct ImageItem: Codable, Hashable {
     var type: String
     var url: String
     var width: Double
